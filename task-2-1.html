@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script>
+           let root = document.querySelector('#root');
+           let h1 = document.createElement('h1');
+           h1.style = "border: 1px solid;";
+           h1.append("Заголовок");
+           let p = document.createElement('p');
+           p.append("Это мой текст");
+           let a = document.createElement('a');
+           a.href = "https://yandex.ru";
+           a.target = "_blank";
+           a.append("Ссылка на Яндекс");
+
+           root.append(h1);
+           root.append(p);
+           root.append(a);
+           function redOn() {
+                this.style = "border: 2px solid red;";
+            }
+            function redOff() {
+                this.style = "";
+            }
+            all = document.body.querySelectorAll("*");
+            for (i = 0; i< all.length; i++) {
+                all[i].addEventListener("mouseenter", redOn);
+                all[i].addEventListener("mouseleave", redOff);
+                console.log(all[i]);
+            }
+
+        </script>
+    </body>
+</html>
